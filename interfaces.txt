@@ -1,0 +1,29 @@
+Arquitectura de capas (layers)
+
+MVC (presentacion)
+mostrar, intercambiar con el usuario, etc
+la responsabilidad de las clases es modelar el problema son persistibles (la info que tiene va a temrinar guardada 
+en un base de datos)
+
+las clases del modelo suelen estar viajando entre capa y capa..
+
+CAPA DE SERVICIOS
+PACKAGE DE SERVICES
+para que sirve?
+es la capa donde esta la logica del negocio, la inteligencia de la aplicacion, la logica de procesamiento.
+ejemplo:una app que valida en cada pantalla que la persona no tenga una deuda.
+la capa de srevicios me fomenta la reutilizacion, es una serie de funcionalidades, conjunto de servicios reusables
+las pantallas usar el servicio de consulta de deuda.
+los servicios no reutilizables. cada servicio es una unidad de trabajo. un metodo es un servicio, un servicio puede
+tener varios metodos, todos los metodos son servicios
+
+capa de modelo: para poner los objetos que modelan los dtos de la app
+
+interface:
+
+creo la interface
+creo la clase q implemetna la interfce
+@services a la clase
+agrego el contexcomponentscan en el xml
+en el o los controloadores pongo atributo de tipo interface
+@inject
